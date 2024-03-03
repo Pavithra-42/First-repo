@@ -13,7 +13,7 @@ variable "vpc_id" {
 # Generate a new key pair
 resource "aws_key_pair" "example_key_pair" {
   key_name   = "example-key-pair"
-  public_key = file("~/.ssh/id_rsa.pub") # Replace with the path to your public key
+  public_key = file("C:/Users/Hi/.ssh/id_rsa.pub") # Replace with the path to your public key
 }
 
 # Create an EC2 instance within the existing VPC
