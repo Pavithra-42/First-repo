@@ -1,8 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/3.9.8" 
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/3.9.8 
+                             http://maven.apache.org/xsd/maven-3.9.8.xsd">
+    <modelVersion>3.9.8</modelVersion>
 
     <groupId>com.example</groupId>
     <artifactId>my-project</artifactId>
@@ -29,21 +29,6 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-                  <plugin>
-                <groupId>org.sonarsource.scanner.maven</groupId>
-                <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.9.1.2184</version>
-            </plugin>
         </plugins>
     </build>
-         <profiles>
-        <profile>
-            <id>sonar</id>
-            <properties>
-                <!-- SonarQube server URL and authentication token -->
-                <sonar.host.url>http://localhost:9000</sonar.host.url>
-                <sonar.login>your-sonar-token</sonar.login>
-            </properties>
-        </profile>
-    </profiles>
 </project>
