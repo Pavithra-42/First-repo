@@ -29,6 +29,21 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+                  <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.9.1.2184</version>
+            </plugin>
         </plugins>
     </build>
+         <profiles>
+        <profile>
+            <id>sonar</id>
+            <properties>
+                <!-- SonarQube server URL and authentication token -->
+                <sonar.host.url>http://localhost:9000</sonar.host.url>
+                <sonar.login>your-sonar-token</sonar.login>
+            </properties>
+        </profile>
+    </profiles>
 </project>
