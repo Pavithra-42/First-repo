@@ -4,7 +4,8 @@
   "description": "My project description",
   "scripts": {
     "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"Running build script...\""
   },
   "dependencies": {
     "express": "^4.17.1"
