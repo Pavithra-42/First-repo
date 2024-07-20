@@ -9,11 +9,13 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <properties>
+   <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <sonar.projectKey>com.example:my-project</sonar.projectKey> <!-- Ensure this key is correct -->
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url> <!-- Replace with your SonarQube server URL -->
+        <sonar.projectKey>com.example:my-project</sonar.projectKey>
+        <sonar.organization>sonarpavi</sonar.organization> <!-- Your SonarCloud organization -->
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url> <!-- SonarCloud URL -->
+        <sonar.login>new</sonar.login> <!-- Your SonarCloud token -->
     </properties>
 
     <dependencies>
