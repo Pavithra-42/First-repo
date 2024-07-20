@@ -12,6 +12,9 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <sonar.organization>YourOrganizationName</sonar.organization> <!-- Replace with your SonarQube organization name -->
+        <sonar.projectKey>com.example:my-project</sonar.projectKey> <!-- Replace with your project key -->
+        <sonar.host.url>YourSonarQubeServerURL</sonar.host.url> <!-- Replace with your SonarQube server URL -->
     </properties>
 
     <dependencies>
