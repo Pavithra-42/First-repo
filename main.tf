@@ -15,7 +15,6 @@ variable "server_public_ip" {
 variable "private_key" {
   description = "The path to the private key for SSH"
   type        = string
-  default     = "/home/jenkins/.ssh/private_key.pem"  # Adjust the path as needed
 }
 
 resource "null_resource" "install_docker" {
