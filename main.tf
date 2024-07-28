@@ -1,14 +1,29 @@
 provider "aws" {
-  region = "us-east-1"
+  region = var.aws_region
+}
+
+variable "aws_region" {
+  description = "The AWS region to deploy to"
+  type        = string
+}
+
+variable "server_public_ip" {
+  description = "The public IP address of the server"
+  type        = string
+}
+
+variable "private_key" {
+  description = "The path to the private key for SSH"
+  type        = string
 }
 
 resource "null_resource" "install_docker" {
   provisioner "remote-exec" {
     connection {
       type        = "ssh"
-      host        = "34.229.141.58"  # Replace with your server's public IP
-      user        = "ubuntu"                # Replace with your SSH username
-      private_key = file("/home/ubuntu/.ssh/private_key.pem")  # Replace with the path to your private key
+      host        = var.server_public_ip  # Using the variable
+      user        = "ubuntu"  # Replace with your SSH username
+      private_key = file(var.private_key)  # Using the variable
     }
 
     inline = [
@@ -21,5 +36,5 @@ resource "null_resource" "install_docker" {
 }
 
 output "public_ip" {
-  value = "34.229.141.58"  # Replace with your server's public IP
+  value = var.server_public_ip  # Using the variable
 }
