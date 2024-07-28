@@ -13,7 +13,7 @@ variable "server_public_ip" {
 }
 
 variable "private_key" {
-  description = "The path to the private key for SSH"
+  description = "The content of the private key for SSH"
   type        = string
 }
 
@@ -21,20 +21,20 @@ resource "null_resource" "install_docker" {
   provisioner "remote-exec" {
     connection {
       type        = "ssh"
-      host        = var.server_public_ip  # Using the variable
-      user        = "ubuntu"  # Replace with your SSH username
-      private_key = file(var.private_key)  # Using the variable
+      host        = var.server_public_ip
+      user        = "ubuntu"
+      private_key = var.private_key
     }
 
     inline = [
-      "sudo apt-get update -y",  # Use apt-get for Ubuntu
+      "sudo apt-get update -y",
       "sudo apt-get install -y docker.io",
       "sudo systemctl start docker",
-      "sudo usermod -aG docker ubuntu"  # Add the user to the docker group
+      "sudo usermod -aG docker ubuntu"
     ]
   }
 }
 
 output "public_ip" {
-  value = var.server_public_ip  # Using the variable
+  value = var.server_public_ip
 }
